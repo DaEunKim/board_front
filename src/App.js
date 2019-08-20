@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { PostContainer } from "./containers";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import { Header, HeaderUnder, Writing } from "./components";
+import { Header, HeaderUnder, Writing, Login } from "./components";
 
 class App extends Component {
   render() {
@@ -11,6 +11,7 @@ class App extends Component {
         <HeaderUnder />
         <BrowserRouter>
           <Switch>
+            <Route key="switch/login" exact path="/login" component={Login} />
             <Route
               key="switch/writing"
               exact

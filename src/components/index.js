@@ -9,6 +9,7 @@ import CommentList from "./CommentList/CommentList";
 import Warning from "./Warning/Warning";
 import Writing from "./Writing/Writing";
 import DetailPost from "./DetailPost/DetailPost";
+import Login from "./Login/Login";
 
 export {
   Header,
@@ -21,5 +22,6 @@ export {
   Comment,
   Warning,
   Writing,
-  DetailPost
+  DetailPost,
+  Login
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
 import "./HeaderUnder.css";
+import { Login } from "../Login/Login";
 
 const HeaderUnder = () => (
   <div className="HeaderUnder">
@@ -25,8 +26,7 @@ const HeaderUnder = () => (
       labelPosition="left"
       onClick={e => {
         e.preventDefault();
-
-        alert("dd");
+        window.location = "./login";
       }}
     />
   </div>
