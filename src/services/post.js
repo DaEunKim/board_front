@@ -5,6 +5,10 @@ export function getList() {
   return axios.get(`${PROXY_URL}${HANUL_API}/api/posts/list`);
 }
 
+export function getReadPost(id) {
+  return axios.get(`${PROXY_URL}${HANUL_API}/api/posts/read/${id}`);
+}
+
 export function deletePost(id) {
   return axios
     .delete(`${PROXY_URL}${HANUL_API}/api/posts/delete/${id}`)
@@ -13,8 +17,13 @@ export function deletePost(id) {
     });
 }
 
-export function getLike(id) {
-  return axios.get(`${PROXY_URL}${HANUL_API}/api/posts/like/${id}`);
+export function postLike(data) {
+  const likeUrl = `${PROXY_URL}${HANUL_API}/api/posts/like`;
+  return axios.post(likeUrl, data).then(res => {
+    if (res) {
+      window.location.reload();
+    }
+  });
 }
 
 export function postWriting(data, setCheckRes) {
