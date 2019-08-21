@@ -4,3 +4,10 @@
   padding: 1rem;
   border-radius: 5px;
 }
+.tag {
+  color: grey;
+}
+.ui.button.PostList-right-button {
+  float: right;
+  margin: 0px;
+}
