@@ -4,6 +4,7 @@ import { Icon, Button } from "semantic-ui-react";
 import * as service from "../../services/post";
 import { Link } from "react-router-dom";
 import { DetailPost } from "../DetailPost/DetailPost";
+
 const PostList = ({ post, index }) => {
   // map data to components
   const {
