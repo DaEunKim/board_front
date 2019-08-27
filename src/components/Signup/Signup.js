@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-// import * as service from "../../services/post";
-import axios from "axios";
-// import { HANUL_API, PROXY_URL } from "../CONSTANTS/url";
 import * as service from "../../services/post";
 
 function checkedID(id) {
@@ -20,10 +17,7 @@ function checkedID(id) {
 }
 
 export default function SignUp({ location: { search } }) {
-  //   const SignUpUrl = `${PROXY_URL}${HANUL_API}:5100/api/users/create`;
-
   const [id, setId] = useState("");
-
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -51,17 +45,6 @@ export default function SignUp({ location: { search } }) {
       email
     };
     service.postSignup(data, setCheckRes);
-    // axios
-    //   .post(SignUpUrl, data)
-    //   .then(res => {
-    //     if (res.data.success) {
-    //       console.log(res);
-    //       setCheckRes(res.data);
-    //     }
-    //   })
-    //   .catch(err => {
-    //     console.log(err);
-    //   });
   };
 
   return (
