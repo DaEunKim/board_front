@@ -32,3 +32,18 @@ export function postWriting(data, setCheckRes) {
     }
   });
 }
+
+export function postSignup(data, setCheckRes) {
+  const SignUpUrl = `${HANUL_API}/api/users/create`;
+  return axios
+    .post(SignUpUrl, data)
+    .then(res => {
+      if (res.data.success) {
+        console.log(res);
+        setCheckRes(res.data);
+      }
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}

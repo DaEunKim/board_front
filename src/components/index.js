@@ -10,6 +10,7 @@ import Warning from "./Warning/Warning";
 import Writing from "./Writing/Writing";
 import DetailPost from "./DetailPost/DetailPost";
 import Login from "./Login/Login";
+import Signup from "./Signup/Signup";
 
 export {
   Header,
@@ -23,5 +24,6 @@ export {
   Warning,
   Writing,
   DetailPost,
-  Login
+  Login,
+  Signup
 };

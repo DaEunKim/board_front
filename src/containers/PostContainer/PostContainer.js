@@ -1,6 +1,17 @@
 import React, { Component } from "react";
-import { PostWrapper, Navigate, Post, Warning } from "../../components";
+import {
+  PostWrapper,
+  Navigate,
+  Post,
+  Warning,
+  Writing,
+  Login,
+  Signup,
+  DetailPost
+} from "../../components";
 import * as service from "../../services/post";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+// import { Header, HeaderUnder, Writing, Login, DetailPost } from "./components";
 
 class PostContainer extends Component {
   constructor(props) {
@@ -100,22 +111,46 @@ class PostContainer extends Component {
     return (
       <PostWrapper>
         {/* Login */}
-        <Post
-          postId={postId}
-          post_data={post_data}
-          // title={post.title}
-          // body={post.body}
-          // comments={comments}
-        />
-        <Navigate
-          postId={postId}
-          disabled={fetching}
-          onClick={this.handleNavigateClick}
-        />
-        <Warning
-          visible={warningVisibility}
-          message="That post does not exist"
-        />
+        <BrowserRouter>
+          <Switch>
+            <Route
+              key="switch/signup"
+              exact
+              path="/signup"
+              component={Signup}
+            />
+            <Route key="switch/login" exact path="/login" component={Login} />
+            <Route
+              key="switch/detail"
+              exact
+              path="/detail"
+              component={DetailPost}
+            />
+            <Route
+              key="switch/writing"
+              exact
+              path="/writing"
+              component={Writing}
+            />
+
+            <Post
+              postId={postId}
+              post_data={post_data}
+              // title={post.title}
+              // body={post.body}
+              // comments={comments}
+            />
+            <Navigate
+              postId={postId}
+              disabled={fetching}
+              onClick={this.handleNavigateClick}
+            />
+            <Warning
+              visible={warningVisibility}
+              message="That post does not exist"
+            />
+          </Switch>
+        </BrowserRouter>
       </PostWrapper>
     );
   }

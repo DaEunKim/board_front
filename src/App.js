@@ -11,7 +11,7 @@ class App extends Component {
         <HeaderUnder />
         <BrowserRouter>
           <Switch>
-            <Route key="switch/login" exact path="/login" component={Login} />
+            {/* <Route key="switch/login" exact path="/login" component={Login} />
             <Route
               key="switch/detail"
               exact
@@ -23,7 +23,7 @@ class App extends Component {
               exact
               path="/writing"
               component={Writing}
-            />
+            /> */}
             <PostContainer />
           </Switch>
         </BrowserRouter>

@@ -54,7 +54,7 @@ const DetailPost = ({ location: { search } }) => {
   }
 
   const { post, success } = data;
-  console.log(post);
+  // console.log(post);
 
   if (success) {
     return (
@@ -64,8 +64,8 @@ const DetailPost = ({ location: { search } }) => {
         <div>{post.creatorId}</div>
         <div>{post.createTime}</div>
         <div>{post.text}</div>
-        <div>{post.likeCount}</div>
-        <div>{post.viewCount}</div>
+        <div>{`like : ${post.likeCount}`}</div>
+        <div>{`view : ${post.viewCount}`}</div>
       </div>
     );
   }

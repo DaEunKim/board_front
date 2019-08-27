@@ -4,19 +4,11 @@ import { Icon, Button } from "semantic-ui-react";
 import * as service from "../../services/post";
 import { Link } from "react-router-dom";
 import { DetailPost } from "../DetailPost/DetailPost";
+import classNames from "classnames";
 
 const PostList = ({ post, index }) => {
   // map data to components
-  const {
-    id,
-    title,
-    creatorId,
-    createTime,
-    text,
-    tags,
-    likeCount,
-    viewCount
-  } = post;
+  const { id, title, creatorId, tags, likeCount, viewCount } = post;
   const data = { postId: id, userId: creatorId };
 
   let likeFlag = false;
@@ -41,7 +33,7 @@ const PostList = ({ post, index }) => {
         <div>
           <Icon
             color="red"
-            name={likeFlag ? "heart" : "heart outline"}
+            name={classNames("heart", { outline: !likeFlag })}
             onClick={e => {
               e.preventDefault();
               likeFlag = true;
@@ -55,9 +47,6 @@ const PostList = ({ post, index }) => {
 
         <div>{`작성자 : ${creatorId}`}</div>
 
-        <div>{createTime}</div>
-        <br />
-        <div>{text}</div>
         <br />
         <div className="tag">
           {tags &&
