@@ -7,10 +7,12 @@ import {
   Writing,
   Login,
   Signup,
-  DetailPost
+  DetailPost,
+  UserInfo
 } from "../../components";
 import * as service from "../../services/post";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+// import { userInfo } from "os";
 // import { Header, HeaderUnder, Writing, Login, DetailPost } from "./components";
 
 class PostContainer extends Component {
@@ -119,7 +121,14 @@ class PostContainer extends Component {
               path="/signup"
               component={Signup}
             />
+
             <Route key="switch/login" exact path="/login" component={Login} />
+            <Route
+              key="switch/useinfo"
+              exact
+              path="/userinfo"
+              component={UserInfo}
+            />
             <Route
               key="switch/detail"
               exact

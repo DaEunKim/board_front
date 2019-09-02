@@ -47,3 +47,24 @@ export function postSignup(data, setCheckRes) {
       console.log(err);
     });
 }
+export function postLogin(data, setCheckRes) {
+  const LoginCheckUrl = `${HANUL_API}/api/users/login`;
+  return axios
+    .post(LoginCheckUrl, data)
+    .then(res => {
+      if (res.data.success) {
+        // console.log(res);
+        setCheckRes(res);
+        return;
+      } else {
+        return alert("아이디 혹은 비밀번호가 틀렸습니다. 다시 입력하세요. ");
+      }
+    })
+    .catch(err => {
+      console.log(err);
+    });
+}
+
+export function getUserList(id) {
+  return axios.get(`${HANUL_API}/api/users/read/${id}`);
+}
